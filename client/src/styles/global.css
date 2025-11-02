@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f6fa;
+  color: #1a202c;
+}
+
+header, footer {
+  width: 100%;
+}
+
+main {
+  min-height: 70vh;
+  padding: 2rem 5%;
+}
