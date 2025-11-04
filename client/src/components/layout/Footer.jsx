@@ -1,68 +1,73 @@
 import React from "react";
 import "../../styles/footer.css";
 
-export default function Footer(){
+export default function Footer() {
   return (
-    <footer className="footer" id="contact">
+    <footer className="footer">
       <div className="footer-content">
         <div className="footer-section">
           <div className="footer-logo">
             <div className="footer-logo-circle">
-              <img src="/logo.png" alt="GDGC Logo" className="footer-logo-img" />
+              <img src="/logo.png" alt="Quizzzzard Logo" className="footer-logo-img" />
             </div>
-            <span>GDGC AIKTC</span>
+            <span>Quizzzzard</span>
           </div>
 
           <p className="footer-about">
-            Google Developer Group on Campus at AIKTC. Empowering students
-            with Google technologies through workshops, events, and
-            collaborative learning.
+            Quizzzzard is your smart quiz and leaderboard platform designed for
+            interactive learning, real-time competition, and AI-driven insights.
           </p>
 
           <div className="footer-contact">
-            <span>📞</span>
-            <span>+91 98674 08609</span>
+            <span>📩</span>
+            <a href="mailto:support@quizzzzard.com">support@quizzzzard.com</a>
           </div>
 
           <div className="social-icons">
-            <a href="#" className="social-icon" aria-label="GitHub">🐙</a>
-            <a href="#" className="social-icon" aria-label="LinkedIn">💼</a>
-            <a href="mailto:gdgconcampusaiktc@gmail.com" className="social-icon" aria-label="Email">@</a>
+            <a href="https://github.com/amanantuley/Quizzzzard" className="social-icon" aria-label="GitHub">
+              🐙
+            </a>
+            <a href="https://www.linkedin.com/in/aman-antuley-8974ab26a/" className="social-icon" aria-label="LinkedIn">
+              💼
+            </a>
+            <a href="mailto:support@quizzzzard.com" className="social-icon" aria-label="Email">
+              ✉️
+            </a>
           </div>
         </div>
 
         <div className="footer-section">
-          <h3>Quick Links</h3>
+          <h3>Explore</h3>
           <ul className="footer-links">
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#teams">Team</a></li>
-            <li><a href="#events">Events</a></li>
-            <li><a href="#resources">Resources</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/quizzes">Quizzes</a></li>
+            <li><a href="/leaderboard">Leaderboard</a></li>
+            <li><a href="/login">Login</a></li>
           </ul>
         </div>
 
         <div className="footer-section">
-          <h3>Programs</h3>
+          <h3>Resources</h3>
           <ul className="footer-links">
-            <li><a href="#workshops">Workshops</a></li>
-            <li><a href="https://algorithm9.aiktc.ac.in/">Hackathons</a></li>
-            <li><a href="#tech-talks">Projects</a></li>
-            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#">Docs</a></li>
+            <li><a href="#">API</a></li>
+            <li><a href="#">Support</a></li>
+            <li><a href="#">Feedback</a></li>
           </ul>
         </div>
 
         <div className="footer-section">
-          <h3>Connect With Us</h3>
+          <h3>Follow Us</h3>
           <ul className="footer-links">
-            <li><a href="https://chat.whatsapp.com/FvcCSpX8wef6iamEoDESXv">WhatsApp Group</a></li>
-            <li><a href="https://www.instagram.com/gdgc_aiktc">Instagram</a></li>
-            <li><a href="https://www.linkedin.com/company/gdg-on-campus-aiktc/">LinkedIn</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">LinkedIn</a></li>
           </ul>
         </div>
       </div>
 
       <div className="footer-bottom">
-        <p>© 2025 <span>GDGC AIKTC</span>. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} <span>Quizzzzard</span>. All rights reserved.</p>
       </div>
     </footer>
   );
