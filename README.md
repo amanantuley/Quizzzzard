@@ -14,7 +14,6 @@ Quizzzzard is an interactive quiz platform designed to make learning fun, engagi
 * 🌐 **Responsive UI** – Works smoothly on desktop and mobile devices
 * 🔒 **Secure Login/Signup** – Keep your progress safe across devices
 
----
 
 ## 🛠️ Tech Stack
 
