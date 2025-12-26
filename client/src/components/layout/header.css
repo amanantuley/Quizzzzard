@@ -1,6 +1,96 @@
-.site-header { background: #fff; border-bottom: 1px solid rgba(16,24,40,0.06); }
-.site-header-inner { max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:12px 5%; }
-.brand { font-weight:700; font-size:1.1rem; color: #111; text-decoration:none; }
-.site-header a { margin-left:18px; color:#374151; text-decoration:none; }
-.btn-link { background:none;border:none;color:#374151; cursor:pointer;margin-left:12px }
-@media(max-width:600px){ .site-header-inner{flex-direction:column; gap:8px} }
+/* Header - Advanced Professional and Mobile-Responsive */
+
+:root {
+	--primary: #3b82f6;
+	--bg-dark: #0f172a;
+	--bg-surface: #111827;
+	--text-primary: #e5e7eb;
+	--text-muted: #9ca3af;
+	--border: rgba(255, 255, 255, 0.08);
+}
+
+.site-header {
+	position: sticky;
+	top: 0;
+	z-index: 50;
+	background: rgba(17, 24, 39, 0.85);
+	backdrop-filter: saturate(150%) blur(8px);
+	border-bottom: 1px solid var(--border);
+}
+
+.site-header-inner {
+	max-width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 12px 5%;
+}
+
+.brand {
+	font-weight: 800;
+	font-size: 1.05rem;
+	color: var(--text-primary);
+	text-decoration: none;
+	letter-spacing: -0.01em;
+}
+
+.menu-toggle {
+	display: none;
+	background: var(--bg-surface);
+	color: var(--text-primary);
+	border: 1px solid var(--border);
+	border-radius: 10px;
+	width: 40px;
+	height: 40px;
+	align-items: center;
+	justify-content: center;
+}
+
+.menu-icon { font-size: 1.1rem; }
+
+.nav { display: flex; }
+.nav-list {
+	display: flex;
+	align-items: center;
+	gap: 18px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.nav-item a,
+.btn-link {
+	color: var(--text-muted);
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.nav-item a:hover,
+.nav-item a:focus,
+.btn-link:hover,
+.btn-link:focus {
+	color: var(--text-primary);
+	outline: none;
+}
+
+.btn-link {
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+	.menu-toggle { display: inline-flex; }
+	.nav { display: none; }
+	.nav.open { display: block; }
+
+	.site-header-inner { gap: 8px; }
+	.nav-list { flex-direction: column; align-items: flex-start; gap: 10px; padding: 10px 0; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+	.site-header { backdrop-filter: none; }
+}

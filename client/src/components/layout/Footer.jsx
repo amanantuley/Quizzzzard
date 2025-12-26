@@ -3,7 +3,7 @@ import "../../styles/footer.css";
 
 export default function Footer() {
   return (
-    <footer className="footer">
+    <footer className="footer" role="contentinfo">
       <div className="footer-content">
         <div className="footer-section">
           <div className="footer-logo">
@@ -24,10 +24,22 @@ export default function Footer() {
           </div>
 
           <div className="social-icons">
-            <a href="https://github.com/amanantuley/Quizzzzard" className="social-icon" aria-label="GitHub">
+            <a
+              href="https://github.com/amanantuley/Quizzzzard"
+              className="social-icon"
+              aria-label="GitHub"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               🐙
             </a>
-            <a href="https://www.linkedin.com/in/aman-antuley-8974ab26a/" className="social-icon" aria-label="LinkedIn">
+            <a
+              href="https://www.linkedin.com/in/aman-antuley-8974ab26a/"
+              className="social-icon"
+              aria-label="LinkedIn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               💼
             </a>
             <a href="mailto:support@quizzzzard.com" className="social-icon" aria-label="Email">
@@ -67,7 +79,9 @@ export default function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <p>© {new Date().getFullYear()} <span>Quizzzzard</span>. All rights reserved.</p>
+        <p>
+          © {new Date().getFullYear()} <span>Quizzzzard</span>. All rights reserved.
+        </p>
       </div>
     </footer>
   );
