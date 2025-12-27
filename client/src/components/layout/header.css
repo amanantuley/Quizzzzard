@@ -2,10 +2,12 @@
 
 :root {
 	--primary: #2563eb;
-	--bg: #0b1220;
-	--surface: #111827;
-	--text: #e8ecf5;
-	--muted: #a8b3c7;
+	--primary-strong: #1d4ed8;
+	--bg: #050915;
+	--surface: #0d1324;
+	--surface-2: #111a2f;
+	--text: #edf1fb;
+	--muted: #9babc6;
 	--border: rgba(255, 255, 255, 0.08);
 }
 
@@ -13,24 +15,24 @@
 	position: sticky;
 	top: 0;
 	z-index: 50;
-	background: var(--bg);
+	background: linear-gradient(90deg, rgba(13, 19, 36, 0.92), rgba(5, 9, 21, 0.95));
 	border-bottom: 1px solid var(--border);
-	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+	box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
 }
 
 .site-header-inner {
-	max-width: 1200px;
+	max-width: 1280px;
 	margin: 0 auto;
 	display: flex;
 	align-items: center;
-	gap: 14px;
+	gap: 18px;
 	justify-content: space-between;
-	padding: 12px 5%;
+	padding: 14px 5%;
 }
 
 .brand {
 	font-weight: 800;
-	font-size: 1.05rem;
+	font-size: 1.08rem;
 	color: var(--text);
 	text-decoration: none;
 	letter-spacing: -0.01em;
@@ -73,20 +75,31 @@
 	padding: 0;
 }
 
-.nav-item a,
+.nav-link,
 .btn-link {
 	color: var(--muted);
 	text-decoration: none;
 	font-weight: 600;
-	transition: color 0.2s ease;
+	transition: color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
 }
 
-.nav-item a:hover,
-.nav-item a:focus-visible,
+.nav-link {
+	padding: 8px 12px;
+	border-radius: 10px;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible,
 .btn-link:hover,
 .btn-link:focus-visible {
 	color: var(--text);
 	outline: none;
+}
+
+.nav-link.active {
+	color: var(--text);
+	background: rgba(37, 99, 235, 0.12);
+	box-shadow: inset 0 0 0 1px rgba(37, 99, 235, 0.35);
 }
 
 .btn-link {
@@ -110,7 +123,7 @@
 	display: inline-block;
 	padding: 10px 14px;
 	border-radius: 10px;
-	background: var(--primary);
+	background: linear-gradient(120deg, var(--primary), var(--primary-strong));
 	color: #fff;
 	font-weight: 700;
 	text-decoration: none;
@@ -138,7 +151,7 @@
 	padding: 0 12px;
 	border-radius: 10px;
 	border: 1px solid var(--border);
-	background: var(--surface);
+	background: var(--surface-2);
 	color: var(--text);
 }
 
@@ -146,6 +159,7 @@
 	border-color: rgba(37, 99, 235, 0.6);
 	outline: none;
 }
+
 
 .search button {
 	height: 40px;

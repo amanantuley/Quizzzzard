@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useMemo, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { useTheme } from "../../context/ThemeContext";
 import "./header.css";
@@ -10,6 +10,13 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [query, setQuery] = useState("");
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const navLinks = useMemo(() => ([
+    { to: "/", label: "Quizzes" },
+    { to: "/leaderboard", label: "Leaderboard" },
+    { to: "/about", label: "About" },
+  ]), []);
 
   const toggleMenu = () => setMenuOpen((prev) => !prev);
   const closeMenu = () => setMenuOpen(false);
@@ -37,15 +44,21 @@ export default function Header() {
           aria-label="Main navigation"
         >
           <ul className="nav-list">
-            <li className="nav-item">
-              <Link to="/" onClick={closeMenu}>Quizzes</Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/leaderboard" onClick={closeMenu}>Leaderboard</Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/about" onClick={closeMenu}>About</Link>
-            </li>
+            {navLinks.map(({ to, label }) => {
+              const active = location.pathname === to || (to !== "/" && location.pathname.startsWith(to));
+              return (
+                <li className="nav-item" key={to}>
+                  <Link
+                    to={to}
+                    onClick={closeMenu}
+                    className={active ? "nav-link active" : "nav-link"}
+                    aria-current={active ? "page" : undefined}
+                  >
+                    {label}
+                  </Link>
+                </li>
+              );
+            })}
 
             <li className="nav-item hide-desktop">
               <form
