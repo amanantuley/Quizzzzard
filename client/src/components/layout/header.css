@@ -36,6 +36,35 @@
 	color: var(--text);
 	text-decoration: none;
 	letter-spacing: -0.01em;
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.brand-mark {
+	width: 36px;
+	height: 36px;
+	border-radius: 10px;
+	background: rgba(37, 99, 235, 0.14);
+	color: var(--text);
+	font-weight: 800;
+	font-size: 0.9rem;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	letter-spacing: 0.5px;
+	box-shadow: inset 0 0 0 1px rgba(37, 99, 235, 0.28);
+}
+
+.brand-badge {
+	padding: 4px 8px;
+	border-radius: 999px;
+	background: rgba(16, 185, 129, 0.16);
+	color: #7ee0b4;
+	font-size: 0.75rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
 }
 
 .menu-toggle {
@@ -107,6 +136,24 @@
 	border: none;
 	cursor: pointer;
 	padding: 0;
+}
+
+.btn-ghost {
+	display: inline-block;
+	padding: 9px 12px;
+	border-radius: 10px;
+	border: 1px solid var(--border);
+	color: var(--text);
+	text-decoration: none;
+	transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.btn-ghost:hover,
+.btn-ghost:focus-visible {
+	border-color: rgba(37, 99, 235, 0.6);
+	background: rgba(37, 99, 235, 0.12);
+	color: var(--text);
+	outline: none;
 }
 
 .theme-toggle {

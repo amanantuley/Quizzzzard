@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import QuestionCard from "./QuestionCard";
 import { useParams, useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
 
 export default function QuizPlayer(){
   const { id } = useParams();
@@ -9,6 +10,7 @@ export default function QuizPlayer(){
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState([]);
   const nav = useNavigate();
+  const { user } = useAuth();
 
   useEffect(()=>{
     axios.get(`${import.meta.env.VITE_API_BASE || "http://localhost:4000/api"}/quizzes/${id}`)
@@ -29,7 +31,10 @@ export default function QuizPlayer(){
     },0);
     // save score
     await axios.post(`${import.meta.env.VITE_API_BASE || "http://localhost:4000/api"}/scores`, {
-      quizId: quiz._id, score: correct, total: quiz.questions.length
+      quizId: quiz._id,
+      score: correct,
+      total: quiz.questions.length,
+      userName: user?.email || "Anonymous",
     }).catch(()=>{});
     nav("/leaderboard");
   }

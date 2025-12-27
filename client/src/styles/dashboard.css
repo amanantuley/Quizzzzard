@@ -1,0 +1,39 @@
+/* Dashboard - professional, responsive */
+
+.db { display: grid; gap: 18px; }
+
+.db-header { display: flex; align-items: center; justify-content: space-between; }
+.db-sub { color: var(--text-muted); }
+
+.db-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 12px; }
+
+.db-card { background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 18px; }
+
+/* Quick form */
+.db-form { display: grid; gap: 10px; }
+.db-form input[type="text"], .db-form select, .db-form input[type="number"] {
+  padding: 10px 12px; border: 1px solid var(--border); border-radius: 10px;
+}
+.db-row { display: flex; gap: 8px; }
+.db-btn { background: var(--primary); color: #fff; padding: 10px 14px; border-radius: 10px; border: none; }
+
+/* Metrics */
+.db-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; align-items: center; }
+.metric { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 14px; text-align: center; }
+.metric-value { font-size: 1.4rem; font-weight: 800; }
+.metric-label { color: var(--text-muted); }
+
+/* Activity */
+.db-empty { color: var(--text-muted); }
+.db-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.db-list-item { display: flex; align-items: center; justify-content: space-between; border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; }
+.db-list-name { color: var(--text-muted); }
+.db-list-score { font-weight: 700; }
+
+@media (max-width: 900px) {
+  .db-grid { grid-template-columns: 1fr; }
+  .db-metrics { grid-template-columns: 1fr 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .db-metrics { grid-template-columns: 1fr; }
+}

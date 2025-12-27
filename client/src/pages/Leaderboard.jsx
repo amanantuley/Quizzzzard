@@ -1,24 +1,25 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import LeaderboardTable from "../components/leaderboard/LeaderboardTable";
 
-export default function Leaderboard(){
+export default function Leaderboard() {
   const [list, setList] = useState([]);
-  useEffect(()=>{
-    axios.get(`${import.meta.env.VITE_API_BASE || "http://localhost:4000/api"}/scores/top`)
-      .then(r=>setList(r.data))
-      .catch(()=>{});
-  },[]);
+  const [loading, setLoading] = useState(true);
+
+  const load = () => {
+    setLoading(true);
+    axios
+      .get(`${import.meta.env.VITE_API_BASE || "http://localhost:4000/api"}/scores/top`)
+      .then((r) => setList(Array.isArray(r.data) ? r.data : []))
+      .catch(() => {})
+      .finally(() => setLoading(false));
+  };
+
+  useEffect(() => { load(); }, []);
+
   return (
     <div>
-      <h2>Leaderboard</h2>
-      <div style={{display:"grid",gap:8}}>
-        {list.map((l,i)=>(
-          <div key={i} className="container" style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
-            <div>{i+1}. {l.userName}</div>
-            <div>{l.score}/{l.total}</div>
-          </div>
-        ))}
-      </div>
+      <LeaderboardTable items={list} isLoading={loading} onRefresh={load} />
     </div>
   );
 }

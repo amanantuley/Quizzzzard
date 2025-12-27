@@ -66,6 +66,12 @@ main {
   min-height: 80vh;
   padding: 3rem 5%;
 }
+@media (max-width: 720px) {
+  main { padding: 1.6rem 4%; }
+}
+@media (max-width: 480px) {
+  main { padding: 1.2rem 3.5%; }
+}
 
 /* =============== Footer =============== */
 footer {

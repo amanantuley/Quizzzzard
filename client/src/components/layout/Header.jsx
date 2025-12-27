@@ -13,7 +13,7 @@ export default function Header() {
   const location = useLocation();
 
   const navLinks = useMemo(() => ([
-    { to: "/", label: "Quizzes" },
+    { to: "/home", label: "Quizzes" },
     { to: "/leaderboard", label: "Leaderboard" },
     { to: "/about", label: "About" },
   ]), []);
@@ -35,7 +35,9 @@ export default function Header() {
     <header className="site-header" role="banner">
       <div className="site-header-inner">
         <Link to="/" className="brand" onClick={closeMenu}>
+          <span className="brand-mark" aria-hidden="true">QZ</span>
           <span className="brand-name">Quizzzzard</span>
+          <span className="brand-badge" aria-label="Live status">Live</span>
         </Link>
 
         <nav
@@ -82,7 +84,7 @@ export default function Header() {
             {user ? (
               <>
                 <li className="nav-item">
-                  <Link to="/dashboard" onClick={closeMenu}>Dashboard</Link>
+                  <Link to="/dashboard" onClick={closeMenu} className="nav-link">Dashboard</Link>
                 </li>
                 <li className="nav-item">
                   <button
@@ -99,7 +101,7 @@ export default function Header() {
               </>
             ) : (
               <li className="nav-item">
-                <Link to="/login" onClick={closeMenu}>Login</Link>
+                <Link to="/login" onClick={closeMenu} className="btn-ghost">Login</Link>
               </li>
             )}
 
@@ -115,7 +117,7 @@ export default function Header() {
             </li>
 
             <li className="nav-item cta">
-              <Link to="/" className="btn-primary" onClick={closeMenu}>Start quiz</Link>
+              <Link to="/login" className="btn-primary" onClick={closeMenu}>Start</Link>
             </li>
           </ul>
         </nav>
