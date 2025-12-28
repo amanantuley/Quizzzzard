@@ -1,0 +1,490 @@
+/* ============================================
+   HOME PAGE - ADVANCED PROFESSIONAL DESIGN
+   ============================================ */
+
+:root {
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --success-gradient: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+  --warning-gradient: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  --card-shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.12);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.home {
+  display: grid;
+  gap: 40px;
+}
+
+/* ============================================
+   HEADER SECTION
+   ============================================ */
+
+.home-header {
+  position: relative;
+  padding: 60px 0;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.header-gradient-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #667eea15 0%, #764ba215 50%, #f093fb15 100%);
+  z-index: 0;
+}
+
+.header-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.header-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0 0 12px 0;
+  color: var(--text-main);
+}
+
+.header-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin: 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ============================================
+   GENERATOR SECTION
+   ============================================ */
+
+.generator-section {
+  padding: 40px 0;
+}
+
+.generator-container {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: var(--card-shadow);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.generator-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.generator-header h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: var(--text-main);
+}
+
+.generator-header p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.generator-form {
+  display: grid;
+  gap: 20px;
+}
+
+.form-group {
+  display: grid;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: var(--text-main);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.form-input,
+.form-select {
+  padding: 12px 16px;
+  border: 2px solid rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: var(--transition);
+  background: white;
+  color: var(--text-main);
+}
+
+.form-input:focus,
+.form-select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-input::placeholder {
+  color: var(--text-muted);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.error-message {
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  color: #856404;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.generate-btn {
+  background: var(--primary-gradient);
+  color: white;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.generate-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.generate-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-icon {
+  font-size: 1.2rem;
+}
+
+/* ============================================
+   BROWSE SECTION
+   ============================================ */
+
+.browse-section {
+  padding: 40px 0;
+}
+
+.browse-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.browse-header h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0 0 8px 0;
+  color: var(--text-main);
+}
+
+.browse-header p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ============================================
+   SEARCH AND FILTER
+   ============================================ */
+
+.search-filter-bar {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  align-items: end;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: white;
+  border: 2px solid rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  padding: 0 16px;
+  transition: var(--transition);
+}
+
+.search-box:focus-within {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.search-icon {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  padding: 12px 0;
+  font-size: 1rem;
+  background: transparent;
+  color: var(--text-main);
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.filter-controls {
+  display: flex;
+  gap: 12px;
+}
+
+.filter-select {
+  padding: 10px 14px;
+  border: 2px solid rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background: white;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.filter-select:hover {
+  border-color: var(--primary);
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* ============================================
+   RESULTS COUNT
+   ============================================ */
+
+.results-count {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+.count-badge {
+  background: rgba(102, 126, 234, 0.1);
+  color: #667eea;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+/* ============================================
+   QUIZZES GRID
+   ============================================ */
+
+.quizzes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
+}
+
+.quiz-card-wrapper {
+  animation: fadeInUp 0.4s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   EMPTY STATE
+   ============================================ */
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #f8f9fb 0%, #ffffff 100%);
+  border-radius: 16px;
+  border: 1px dashed rgba(0, 0, 0, 0.1);
+}
+
+.empty-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.empty-state h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: var(--text-main);
+}
+
+.empty-state p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .quizzes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  .generator-container {
+    padding: 32px;
+  }
+
+  .header-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .search-filter-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-controls {
+    width: 100%;
+  }
+
+  .filter-select {
+    flex: 1;
+  }
+
+  .quizzes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+  }
+
+  .generator-container {
+    padding: 24px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .header-title {
+    font-size: 1.6rem;
+  }
+
+  .browse-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .generator-header h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .quizzes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .generator-container {
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .search-box {
+    padding: 0 12px;
+  }
+
+  .search-input {
+    padding: 10px 0;
+  }
+
+  .filter-select {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+
+  .header-title {
+    font-size: 1.3rem;
+  }
+
+  .header-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .browse-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .results-count {
+    font-size: 0.85rem;
+  }
+
+  .generate-btn {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+
+  .empty-state {
+    padding: 40px 20px;
+  }
+
+  .empty-icon {
+    font-size: 2.5rem;
+  }
+
+  .empty-state h3 {
+    font-size: 1.2rem;
+  }
+}
